@@ -1,42 +1,22 @@
 
-# ROI Hunter Business Data – Public Feed
+# ROI Hunter Business Data – Public Feed (Updated)
 
-This folder is ready to be published as a public, shareable CSV link (similar to a product feed). It includes:
+This folder mirrors your existing GitHub Pages structure so you can overwrite the old files.
 
-- `roi_hunter_business_data.csv` – your data file
-- `index.html` – a simple landing page that links to the CSV
-- `.nojekyll` – prevents Jekyll processing on GitHub Pages
+**Files included**
+- `roi_hunter_business_data.csv` – updated data (ID column first)
+- `index.html` – simple landing page linking to the CSV
+- `.nojekyll` – prevents Jekyll processing
 
-## Option A: Publish via GitHub Pages (Open & Free)
+**Update steps (browser)**
+1. Open your GitHub repository that serves your feed.
+2. Click **Add file → Upload files**.
+3. Drag the updated `roi_hunter_business_data.csv` (and `index.html` if you want the timestamp refreshed) into the upload area.
+4. Click **Commit changes**.
+5. Your Pages site will refresh shortly; the URL stays the same.
 
-1. Create a **public** GitHub repository (e.g., `roi-hunter-business-data`).
-2. Upload the contents of this folder to the repository root.
-3. In **Settings → Pages**, set **Build and deployment** to **Deploy from branch**, and pick `main` (root).
-4. After it deploys, your CSV will be available at:
-
+If your existing URL is:
 ```
-https://<your-user-or-org>.github.io/roi-hunter-business-data/roi_hunter_business_data.csv
+https://<username>.github.io/roi-hunter-business-data/roi_hunter_business_data.csv
 ```
-
-Use that URL in ROI Hunter as your Business Data source.
-
-## Option B: Publish via Amazon S3 (Public Object)
-
-1. Create an S3 bucket (e.g., `roi-hunter-business-data`), enable public access for the object or use a bucket policy.
-2. Upload `roi_hunter_business_data.csv` with **Content-Type: text/csv**.
-3. The public URL will be something like:
-
-```
-https://<bucket>.s3.<region>.amazonaws.com/roi_hunter_business_data.csv
-```
-
-## Option C: Any Static Host
-
-You can also host these files on Netlify, Cloudflare Pages, Google Cloud Storage, Azure Blob Static Website, or your own server. Ensure the CSV is publicly readable and served with `text/csv` if possible.
-
-## Pairing in ROI Hunter
-
-- Pairing field: **first column** (e.g., `Product ID`)
-- Map the remaining columns as attributes.
-- Update cadence: daily is typical.
-
+it will continue to work after the update.
